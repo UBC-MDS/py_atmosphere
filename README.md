@@ -2,6 +2,12 @@
 
 Calculate standard air properties given altitude input in specific units!
 
+## Contributors 
+
+- Francisco Ramirez
+- Zhengling Jiang 
+- Tianjiao Jiang
+
 ## Installation
 
 ```bash
