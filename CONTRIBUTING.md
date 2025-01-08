@@ -35,8 +35,7 @@ If you are proposing a feature:
 
 * Explain in detail how it would work.
 * Keep the scope as narrow as possible, to make it easier to implement.
-* Remember that this is a volunteer-driven project, and that contributions
-  are welcome :)
+
 
 ## Get Started!
 
@@ -59,13 +58,13 @@ Ready to contribute? Here's how to set up `py_atmosphere` for local development.
 
 5. Commit your changes and open a pull request.
 
-## Pull Request Guidelines
+## Pull request process
 
-Before you submit a pull request, check that it meets these guidelines:
-
-1. The pull request should include additional tests if appropriate.
-2. If the pull request adds functionality, the docs should be updated.
-3. The pull request should work for all currently supported operating systems and versions of Python.
+* Please create a Git branch for each pull request (PR).
+* Provide a descriptive title for your PR and include any relevant information in the PR description:
+  - What is the purpose of the change?
+  - What issue does it address (if applicable)?
+  - Any additional notes for the reviewers (e.g., tests added, documentation updated)
 
 ## Code of Conduct
 
