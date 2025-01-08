@@ -16,7 +16,7 @@ $ pip install py_atmosphere
 
 ## Usage
 
-- TODO
+- TODO - Test
 
 ## Contributing
 
