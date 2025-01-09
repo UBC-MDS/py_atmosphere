@@ -1,10 +1,10 @@
 # py_atmosphere
 
-The International Standard Atmospher (ISA) is an atmospheric model of how pressure, temperature, density of the Earth's atmosphere change over a wide range of altitudes. It is published by the International Organization for Standardization (ISO) as an International Standard ISO 2533:1975 (https://www.iso.org/standard/7472.html).
+The International Standard Atmosphere (ISA) is an atmospheric model of how pressure, temperature, density of the Earth's atmosphere change over a wide range of altitudes. It is published by the International Organization for Standardization (ISO) as an International Standard ISO 2533:1975 (https://www.iso.org/standard/7472.html).
 
 The International Civil Aviation Organization (ICAO - https://www.icao.int/Pages/default.aspx) uses this atmospheric models as baseline in their own standard enforcing. This standard is extensively used in the Aerospace industry for aircraft and engine design tasks considering operational envelopes.
 
-This package contains the simple ICAO Standard Atmosphere models and calculates standard atmospheric air properties for an altitude of interes, as well as supports Mach number calculation for a moving object in space at the same altitude.
+This package contains the simple ICAO Standard Atmosphere models and calculates standard atmospheric air properties for an altitude of interest, as well as supports Mach number calculation for a moving object in space at the same altitude.
 
 ## Package Functions
 
