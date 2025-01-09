@@ -1,26 +1,26 @@
 def py_atmosphere(altitude, alt_units):
     """
-    Display standard ICAO air properties given altitude input.
+    Display standard ICAO air properties for a given altitude.
 
-    Given an altitude entered with specified units, this function first transforms the altitude units to a standard in order to read a 
-    table that associates altitude with standard air temperature, pressure and density according to the ICAO standard atmosphere.
-    It outputs the air properties in degrees Celsius (temperature), Pascal (Pressure) and kg/m3 (density)
+    This function calculates standard air properties (temperature, pressure, and density) based on the ICAO standard atmosphere. 
+    The input altitude, provided in a specified unit, is first converted to a standard unit (kilometers) for processing. 
+    The resulting air properties are returned in degrees Celsius (temperature), Pascals (pressure), and kilograms per cubic meter (density).
 
     Parameters:
     ----------
     altitude : float
         A numeric value that represents the altitude of interest. This value is the reference to extract air properties, specifically, temperature, pressure and density.
     alt_units : str
-        Units of the altitude input to function. Valid units are: m (meters), km (kilometers), ft (feet), miles (miles)
+        The unit of the input altitude. Valid units are: m (meters), km (kilometers), ft (feet), miles (miles)
 
     Returns:
     -------
-    List
-        Four element list that describes the inputed altitude (km), along with the temperature (Celsius), pressure (Pascal) and density (kg/m3) of the air.
+    list
+        A list containing four elements that describes the inputed altitude (km), along with the temperature (Celsius), pressure (Pascal) and density (kg/m3) of the air.
 
     Examples
     --------
-    >>>py_atmosphere(0.0, "ft")
+    >>> py_atmosphere(0.0, "ft")
     [0.0, 15, 101325, 1.225]
     """
     pass
