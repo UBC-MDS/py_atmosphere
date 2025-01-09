@@ -1,12 +1,21 @@
 # py_atmosphere
 
-Calculate standard air properties given altitude input in specific units!
+Package intended to use the ICAO Standard Atmosphere to display its standard air properties and calculate the Mach number of a moving object in space at a particular altitude.
 
 ## Contributors 
 
 - Francisco Ramirez
 - Zhengling Jiang 
 - Tianjiao Jiang
+
+## About
+
+Functions included in package:
+- py_atmosphere.py: Function calculates the ICAO standard ambient temperature, pressure and density of the air at a given altitude and displays it. 
+- temp_conversion.py: Function does temperature unit conversion to a variaty of units for ambient conditions that describe the ICAO standard atmosphere.
+- mach_number.py: Given an altitude, function calculates the speed of sound in the embient conditions and calculates the Mach number for the speed of an object moving in the same environment.
+
+To do: a paragraph describing where your packages fit into the Python ecosystem (are there any other Python packages that have the same/similar functionality? Provide links to any that do. If none exist, then clearly state this as well).
 
 ## Installation
 
