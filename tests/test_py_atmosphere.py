@@ -5,6 +5,10 @@ baseline_output_0m = [0.0, 15.04, 101.29]
 baseline_output_11000m = [11000.0, -56.35, 22.7349]
 baseline_output_25000m = [25000.0, -56.46, 2.52227]
 
+#Test input type
+
+#Test plot
+
 def test_output_datatype():
     "Test output data type"
     assert isinstance(py_atmosphere(0.0, "m"), list)
