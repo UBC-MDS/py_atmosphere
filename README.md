@@ -55,9 +55,9 @@ $ pip install py_atmosphere
 - alt_units : Units of the altitude input to function. Valid units are: m (meters), km (kilometers), ft (feet), miles (miles).
 - speed: Speed of the object in m/s.
 
-3. temp_conversion(properties_ICAO_list, property, desired_unit)
-- properties_ICAO_list : A four-element list that describes the inputed altitude (km), along with the temperature (Celsius), pressure (Pascal) and density (kg/m3) of the air. 
-- property :  Selected property for which units need to be changed. Valid inputs are: "altitude", "temperature", "pressure"
+3. temp_conversion(properties, property_to_change, desired_unit)
+- properties : A three-element list that describes the inputed altitude (km), along with the temperature (Celsius) and pressure (Pascal) of the air. This is typically the output of `py_atmosphere` function. 
+- property_to_change :  Selected property for which units need to be changed. Valid inputs are: "altitude", "temperature", "pressure"
 - desired_unit : The desired units for the selected property.
 
 
