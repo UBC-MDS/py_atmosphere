@@ -39,11 +39,11 @@ $ pip install py_atmosphere
 
 ## Usage
 
-`from py_atmosphere.mach_number import py_atmosphere`
+`from py_atmosphere.py_atmosphere import py_atmosphere`
 
 `from py_atmosphere.mach_number import mach_number`
 
-`from py_atmosphere.mach_number import temp_conversion`
+`from py_atmosphere.temp_conversion import temp_conversion`
 
 1. py_atmosphere(altitude, alt_units)
 
