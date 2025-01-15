@@ -1,5 +1,3 @@
-import math
-
 def temp_conversion(properties, property_to_change, desired_unit):
     """
     Convert the units of a selected atmospheric property.
@@ -26,7 +24,7 @@ def temp_conversion(properties, property_to_change, desired_unit):
     Examples
     --------
     >>> temp_conversion([0.0, 15.04, 101325], "temperature", "K")
-    [0.0, 288.15, 101325]
+    [0.0, 288.19, 101325]
     """
     #Initialize list
     output_temp = properties[1]

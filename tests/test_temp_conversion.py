@@ -10,6 +10,7 @@ import math
     ([1000.0, 8.54, 89874], "altitude", "km", [1.0, 8.54, 89874]),  
     ([1000.0, 8.54, 89874], "altitude", "ft", [3280.84, 8.54, 89874]),  
     ([1000.0, 8.54, 89874], "altitude", "miles", [0.621371, 8.54, 89874]),  
+    ([0.0, 15.04, 101325], "temperature", "R", [0.0, 518.74, 101325]),
 ])
 def test_valid_conversion(properties, property_to_change, desired_unit, expected_result):
     """Test valid conversions for temperature, altitude, and pressure."""
