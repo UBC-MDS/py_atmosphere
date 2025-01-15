@@ -1,10 +1,10 @@
 # py_atmosphere
 
-The International Standard Atmosphere (ISA) is an atmospheric model of how pressure, temperature, density of the Earth's atmosphere change over a wide range of altitudes. It is published by the International Organization for Standardization (ISO) as an International Standard ISO 2533:1975 (https://www.iso.org/standard/7472.html).
+The International Standard Atmosphere (ISA) is an atmospheric model of how pressure, temperature, density of the Earth's atmosphere change over a wide range of altitudes. It is published by the International Organization for Standardization (ISO) as an International Standard [ISO 2533:1975](https://www.iso.org/standard/7472.html).
 
-The International Civil Aviation Organization (ICAO - https://www.icao.int/Pages/default.aspx) uses this atmospheric models as baseline in its own standard enforcing. This standard is extensively used in the Aerospace industry for aircraft and engine design tasks considering operational envelopes.
+The International Civil Aviation Organization ([ICAO](https://www.icao.int/Pages/default.aspx)) uses this atmospheric models as baseline in its own standard enforcing. This standard is extensively used in the Aerospace industry for aircraft and engine design tasks considering operational envelopes.
 
-As simplified, but useful atmospheric model was created by NASA's Glenn Research Center for academic purposes (https://www.grc.nasa.gov/www/k-12/airplane/atmosmet.html#:~:text=In%20the%20troposphere%2C%20the%20temperature,atmosphere%20model%20is%20also%20available).
+A simplified, but useful version of the ICAO standard atmospheric model was created by [NASA's Glenn Research Center](https://www.grc.nasa.gov/www/k-12/airplane/atmosmet.html#:~:text=In%20the%20troposphere%2C%20the%20temperature,atmosphere%20model%20is%20also%20available) for academic purposes.
 
 This package contains the simplified NASA's GRC Earth Atmospheric model and calculates atmospheric air properties for an altitude of interest, as well as supports Mach number calculation for a moving object in space at the same altitude.
 
@@ -20,9 +20,9 @@ The package includes the following Functions included in package:
 
 There are multiple Python packages in the ecosystem that have the similar characteristics particularly when it comes to characterization of the standards atmopheres. Existing packages with similar functionalities, particularly for ICAO standard calculations:
 
-- atmos - programming utilities for atmospheric sciences (https://pypi.org/project/atmos/)
-- metpy - reading, visualization and performing calculations with weather data (https://pypi.org/project/MetPy/)
-- pyatmos - archive of routines that estimate the vertical structure of atmosphere with various density models (https://pypi.org/project/pyatmos/)
+- [atmos](https://pypi.org/project/atmos/) - programming utilities for atmospheric sciences.
+- [metpy](https://pypi.org/project/MetPy/) - reading, visualization and performing calculations with weather data.
+- [pyatmos](https://pypi.org/project/pyatmos/) - archive of routines that estimate the vertical structure of atmosphere with various density models.
 
 ## Unique features of py_atmosphere
 
