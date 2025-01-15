@@ -30,6 +30,11 @@ def py_atmosphere(altitude, alt_units):
     [11000.0, -56.35, 22.734909933285515]
     """
 
+    if not isinstance(altitude, (int, float)):
+        raise TypeError("Altitude must be a numeric value (int or float)")
+    if altitude < 0:
+        raise ValueError("Altitude must be a non-negative value")
+    
     ### Manage units for altitude input
     if alt_units == "m":
         alt = altitude
