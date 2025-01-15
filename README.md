@@ -39,7 +39,30 @@ $ pip install py_atmosphere
 
 ## Usage
 
-- Usage examples will be added in a future release.
+`from py_atmosphere.mach_number import py_atmosphere`
+
+`from py_atmosphere.mach_number import mach_number`
+
+`from py_atmosphere.mach_number import temp_conversion`
+
+1. py_atmosphere(altitude, alt_units)
+
+- altitude :  A numeric value that represents the altitude of interest. This value is the reference to extract air properties, specifically, temperature and pressure.
+- alt_units : The unit of the input altitude. Valid units are: m (meters), km (kilometers), ft (feet), miles (miles)
+
+2. mach_number(altitude, alt_units, speed)
+- altitude: A numeric value that represents the altitude of interest. This value is the reference to extract air properties, specifically, temperature, pressure and density.
+- alt_units : Units of the altitude input to function. Valid units are: m (meters), km (kilometers), ft (feet), miles (miles).
+- speed: Speed of the object in m/s.
+
+3. temp_conversion(properties_ICAO_list, property, desired_unit)
+- properties_ICAO_list : A four-element list that describes the inputed altitude (km), along with the temperature (Celsius), pressure (Pascal) and density (kg/m3) of the air. 
+- property :  Selected property for which units need to be changed. Valid inputs are: "altitude", "temperature", "pressure"
+- desired_unit : The desired units for the selected property.
+
+
+
+
 
 ## Contributing
 
