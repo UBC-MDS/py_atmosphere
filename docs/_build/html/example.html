@@ -18,10 +18,11 @@
       <script src="_static/documentation_options.js?v=5929fcd5"></script>
       <script src="_static/doctools.js?v=9a2dae69"></script>
       <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Changelog" href="changelog.html" />
+    <link rel="next" title="CHANGELOG" href="changelog.html" />
     <link rel="prev" title="py_atmosphere" href="index.html" /> 
 </head>
 
@@ -58,7 +59,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#the-mach-number-function">The <code class="docutils literal notranslate"><span class="pre">mach_number()</span></code> function</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">CHANGELOG</a></li>
 <li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="conduct.html">Code of Conduct</a></li>
 <li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">API Reference</a></li>
@@ -130,15 +131,20 @@
 <li><p>P = Pressure (K-Pa - KiloPascal)</p></li>
 <li><p>h = Altitude (m - meters)</p></li>
 </ul>
-<p>In the Troposphere, for $h &lt; 11,000m$:</p>
-<p>$T = 15.04 - 0.00649*h$</p>
-<p>$P = 101.29 * [{\frac{T + 273.1}{288.08}}]^{5.256}$</p>
-<p>In the Lower Stratosphere, for $11,000m &lt; h &lt; 25,000m$:</p>
-<p>$T = -56.46$</p>
-<p>$P = 22.65 * e^{1.73-0.000157*h}$</p>
-<p>For the Upper Stratosphere, for $h &gt; 25,000m$:</p>
-<p>$T = -131.21 + 0.00299*h$</p>
-<p>$P = 2.488 * [{\frac{T + 273.1}{216.6}}]^{-11.388}$</p>
+<p>In the Troposphere, for:</p>
+<div class="math notranslate nohighlight">
+\[\]</div>
+<p>$$h &lt; 11,000m$$
+$$T = 15.04 - 0.00649*h$$
+$$P = 101.29 * [{\frac{T + 273.1}{288.08}}]^{5.256}$$</p>
+<p>In the Lower Stratosphere, for:
+$$11,000m &lt; h &lt; 25,000m$$
+$$T = -56.46$$
+$$P = 22.65 * e^{1.73-0.000157*h}$$</p>
+<p>For the Upper Stratosphere, for:
+$$h &gt; 25,000m$$
+$$T = -131.21 + 0.00299*h$$
+$$P = 2.488 * [{\frac{T + 273.1}{216.6}}]^{-11.388}$$</p>
 <p>Considering these equations, we can use the <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code> function to calculate the standard pressure and temperature given an altitude. Depending on the inquired altitude, the package will select the appropriate set of equations to calculate Temperature and Pressure.</p>
 <p>Note that the inquired altitude may be entered in different units:</p>
 <ul class="simple">
@@ -427,16 +433,16 @@
 <h2>The <code class="docutils literal notranslate"><span class="pre">mach_number()</span></code> function<a class="headerlink" href="#the-mach-number-function" title="Link to this heading"></a></h2>
 <p>The <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code> package is also prepared to calculate the Mach Number of a moving object in stagnant air.</p>
 <p>Taking a step back, it is necessary to describe the concept of <a class="reference external" href="https://www.grc.nasa.gov/www/BGH/sound.html">Speed of Sound</a>. Speed of sound (<code class="docutils literal notranslate"><span class="pre">a</span></code>) is the speed in which sound (or formally, a sound wave) propagates though a medium. In an ideal gas (a common assumption in design activities that describes how gases beave), the speed of sound is only dependent on the medium’s temperature and composition.</p>
-<p>$a = \sqrt{\gamma RT}$</p>
+<p>$$a = \sqrt{\gamma RT}$$</p>
 <p>Where:</p>
 <ul class="simple">
-<li><p>Air property $\gamma$ - Ratio of specific heats - $1.4$ for air.</p></li>
-<li><p>Air property <code class="docutils literal notranslate"><span class="pre">R</span></code> - Gas constant - $287.05 J / kg * K$</p></li>
+<li><p>Air property <code class="docutils literal notranslate"><span class="pre">gamma</span></code> - Ratio of specific heats - 1.4 for air.</p></li>
+<li><p>Air property <code class="docutils literal notranslate"><span class="pre">R</span></code> - Gas constant - 287.05 J / kg * K</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">T</span></code> - Air temperature in K</p></li>
 </ul>
 <p>The Mach Number is dimensionless quantity in fluid dynamics that represents the ratio of flow velocity around a boundary relative to the local speed of sound. In aerospace applications, this ratio represents the relation between an aircraft’s speed as it moves through stagnant air, where the local speed of sound is a property that is only function of the local temperature.</p>
 <p>The Mach number is widely used throughout fluid mechanics applications as it is descriptive of the compressibility of the fluids. In the Aerospace industry it is also descriptive of subsonic, sonic and supersonic flight. Therefore, it is an invaluable design parameter.</p>
-<p>$Ma = \frac{c}{a}$</p>
+<p>$$Ma = \frac{c}{a}$$</p>
 <p>Where:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> - Speed of Sound in medium</p></li>
@@ -482,7 +488,7 @@
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="index.html" class="btn btn-neutral float-left" title="py_atmosphere" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="changelog.html" class="btn btn-neutral float-right" title="CHANGELOG" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>
