@@ -1,0 +1,30 @@
+py_atmosphere
+=============
+
+.. py:module:: py_atmosphere
+
+
+Submodules
+----------
+
+.. toctree::
+   :maxdepth: 1
+
+   /autoapi/py_atmosphere/mach_number/index
+   /autoapi/py_atmosphere/py_atmosphere/index
+   /autoapi/py_atmosphere/temp_conversion/index
+
+
+Attributes
+----------
+
+.. autoapisummary::
+
+   py_atmosphere.__version__
+
+
+Package Contents
+----------------
+
+.. py:data:: __version__
+

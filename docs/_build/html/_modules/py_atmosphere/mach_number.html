@@ -1,0 +1,164 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>py_atmosphere.mach_number &mdash; py_atmosphere  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css?v=fd3f3429" />
+
+  
+      <script src="../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            py_atmosphere
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../example.html">Example Usage - <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../autoapi/index.html">API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">py_atmosphere</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Module code</a></li>
+      <li class="breadcrumb-item active">py_atmosphere.mach_number</li>
+      <li class="wy-breadcrumbs-aside">
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <h1>Source code for py_atmosphere.mach_number</h1><div class="highlight"><pre>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">math</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">py_atmosphere.py_atmosphere</span><span class="w"> </span><span class="kn">import</span> <span class="n">py_atmosphere</span>
+
+<div class="viewcode-block" id="mach_number">
+<a class="viewcode-back" href="../../autoapi/py_atmosphere/mach_number/index.html#py_atmosphere.mach_number.mach_number">[docs]</a>
+<span class="k">def</span><span class="w"> </span><span class="nf">mach_number</span><span class="p">(</span><span class="n">altitude</span><span class="p">,</span> <span class="n">alt_units</span><span class="p">,</span> <span class="n">speed</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Calculate the Mach number of an object moving at a given altitude.</span>
+
+<span class="sd">    Given an altitude, and assumptions of air composition, this function calculates the speed of sound in m/s in </span>
+<span class="sd">    specific altitude using the formula: speed of sound = c = sqrt(gamma * R * T), where `gamma` and `R` are </span>
+<span class="sd">    standard air properties, and `T` is the temperature at the given altitude. Then it calculates the Mach number </span>
+<span class="sd">    of an object moving in said environment.</span>
+<span class="sd">    The ratio of specific heats, gamma is 1.4.</span>
+<span class="sd">    The gas constant R is 287.1 J/kg/K.</span>
+<span class="sd">    Celsius to Kevin: Celsius + 273.15.</span>
+
+<span class="sd">    Parameters:</span>
+<span class="sd">    ------------</span>
+<span class="sd">    altitude : float</span>
+<span class="sd">        A numeric value that represents the altitude of interest. This value is the reference to extract air properties, specifically, temperature, pressure and density.</span>
+<span class="sd">    alt_units : str</span>
+<span class="sd">        Units of the altitude input to function. Valid units are: m (meters), km (kilometers), ft (feet), miles (miles).</span>
+<span class="sd">    speed: float</span>
+<span class="sd">        Speed of the object in m/s.</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">    ---------</span>
+<span class="sd">    float</span>
+<span class="sd">        The Mach number (adimensional) in specific altitude, calculated as: speed / speed of sound as calculated in speed_of_sound function.</span>
+
+<span class="sd">    Examples</span>
+<span class="sd">    ----------</span>
+<span class="sd">    &gt;&gt;&gt; mach_number(0.0, &quot;ft&quot;, 340.4)</span>
+<span class="sd">    1.0</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="c1"># Check the validation for speed</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">speed</span><span class="p">,</span> <span class="p">(</span><span class="nb">int</span><span class="p">,</span> <span class="nb">float</span><span class="p">)):</span>
+        <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s2">&quot;Speed must be a numeric value (int or float)&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">speed</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Speed must be a non-negative value&quot;</span><span class="p">)</span>
+    
+    <span class="c1"># Constants for the speed of sound calculation</span>
+    <span class="n">gamma</span> <span class="o">=</span> <span class="mf">1.4</span>  <span class="c1"># Ratio of specific heats</span>
+    <span class="n">R</span> <span class="o">=</span> <span class="mf">287.05</span>  <span class="c1"># The gas constant in J/(kg·K)</span>
+    
+    <span class="c1"># Get temperature from py_atmosphere</span>
+    <span class="n">temp</span> <span class="o">=</span> <span class="n">py_atmosphere</span><span class="p">(</span><span class="n">altitude</span><span class="p">,</span> <span class="n">alt_units</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>  <span class="c1"># Temperature in Celsius</span>
+    <span class="n">temp_k</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">+</span> <span class="mf">273.15</span>  <span class="c1"># Convert Celsius to Kelvin</span>
+    
+    <span class="c1"># Calculate speed of sound</span>
+    <span class="n">speed_of_sound</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gamma</span> <span class="o">*</span> <span class="n">R</span> <span class="o">*</span> <span class="n">temp_k</span><span class="p">)</span>
+    
+    <span class="c1"># Calculate Mach number</span>
+    <span class="n">mach</span> <span class="o">=</span> <span class="n">speed</span> <span class="o">/</span> <span class="n">speed_of_sound</span>
+    
+    <span class="k">return</span> <span class="n">mach</span></div>
+
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Tianjiao Jiang, Zhengling Jiang, Francisco Ramirez.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

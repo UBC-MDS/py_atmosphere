@@ -1,0 +1,199 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>py_atmosphere &mdash; py_atmosphere  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Example Usage - py_atmosphere" href="example.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            py_atmosphere
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="example.html">Example Usage - <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">py_atmosphere</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">py_atmosphere</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.md.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="py-atmosphere">
+<h1>py_atmosphere<a class="headerlink" href="#py-atmosphere" title="Link to this heading"></a></h1>
+<p>The International Standard Atmosphere (ISA) is an atmospheric model of how pressure, temperature, density of the Earth’s atmosphere change over a wide range of altitudes. It is published by the International Organization for Standardization (ISO) as an International Standard <a class="reference external" href="https://www.iso.org/standard/7472.html">ISO 2533:1975</a>.</p>
+<p>The International Civil Aviation Organization (<a class="reference external" href="https://www.icao.int/Pages/default.aspx">ICAO</a>) uses this atmospheric models as baseline in its own standard enforcing. This standard is extensively used in the Aerospace industry for aircraft and engine design tasks considering operational envelopes.</p>
+<p>A simplified, but useful version of the ICAO standard atmospheric model was created by <a class="reference external" href="https://www.grc.nasa.gov/www/k-12/airplane/atmosmet.html#:~:text=In%20the%20troposphere%2C%20the%20temperature,atmosphere%20model%20is%20also%20available">NASA’s Glenn Research Center</a> for academic purposes.</p>
+<p>This package contains the simplified NASA’s GRC Earth Atmospheric model and calculates atmospheric air properties for an altitude of interest, as well as supports Mach number calculation for a moving object in space at the same altitude.</p>
+<section id="package-functions">
+<h2>Package Functions<a class="headerlink" href="#package-functions" title="Link to this heading"></a></h2>
+<p>The package includes the following Functions included in package:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">py_atmosphere.py</span></code> - Function calculates the NASA’s GRC ambient temperature, pressure and density of the air at a given altitude (from 0 to 25,000 meters).</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">temp_conversion.py</span></code> -  Function does temperature unit conversion to a variety of units for ambient conditions that describe the atmospheric model.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mach_number.py</span></code> - Given an altitude, function calculates the speed of sound in the embient conditions and calculates the Mach number for the speed of an object moving in the same environment.</p></li>
+</ul>
+</section>
+<section id="py-atmosphere-in-the-python-ecosystem">
+<h2>py_atmosphere in the Python Ecosystem<a class="headerlink" href="#py-atmosphere-in-the-python-ecosystem" title="Link to this heading"></a></h2>
+<p>There are multiple Python packages in the ecosystem that have the similar characteristics particularly when it comes to characterization of the standards atmopheres. Existing packages with similar functionalities, particularly for ICAO standard calculations:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pypi.org/project/atmos/">atmos</a> - programming utilities for atmospheric sciences.</p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/MetPy/">metpy</a> - reading, visualization and performing calculations with weather data.</p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/pyatmos/">pyatmos</a> - archive of routines that estimate the vertical structure of atmosphere with various density models.</p></li>
+</ul>
+</section>
+<section id="unique-features-of-py-atmosphere">
+<h2>Unique features of py_atmosphere<a class="headerlink" href="#unique-features-of-py-atmosphere" title="Link to this heading"></a></h2>
+<p>Use of the standard model on practical aerospace applications is quite limited. This package stands out given its unique blend of reference standards on practical design calculations, tailored for individuals with little to no technical expertise of the Aerospace industry and aircraft design. Here is what sets <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code> apart:</p>
+<ul class="simple">
+<li><p>Package avoids complexity by performing simple, transparent calculations of high value on aircraft design parameters, applying a simple interpretable atmospheric model (NASA’s GRC).</p></li>
+<li><p>Makes use of the standard for calculation on simple physical parameters such as speed of sound and Mach number for a moving object.</p></li>
+</ul>
+</section>
+<section id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>py_atmosphere
+</pre></div>
+</div>
+</section>
+<section id="usage">
+<h2>Usage<a class="headerlink" href="#usage" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">py_atmosphere.py_atmosphere</span> <span class="pre">import</span> <span class="pre">py_atmosphere</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">py_atmosphere.mach_number</span> <span class="pre">import</span> <span class="pre">mach_number</span></code></p>
+<p><code class="docutils literal notranslate"><span class="pre">from</span> <span class="pre">py_atmosphere.temp_conversion</span> <span class="pre">import</span> <span class="pre">temp_conversion</span></code></p>
+<ol class="arabic simple">
+<li><p>py_atmosphere(altitude, alt_units)</p></li>
+</ol>
+<ul class="simple">
+<li><p>altitude :  A numeric value that represents the altitude of interest. This value is the reference to extract air properties, specifically, temperature and pressure.</p></li>
+<li><p>alt_units : The unit of the input altitude. Valid units are: m (meters), km (kilometers), ft (feet), miles (miles)</p></li>
+</ul>
+<ol class="arabic simple" start="2">
+<li><p>mach_number(altitude, alt_units, speed)</p></li>
+</ol>
+<ul class="simple">
+<li><p>altitude: A numeric value that represents the altitude of interest. This value is the reference to extract air properties, specifically, temperature, pressure and density.</p></li>
+<li><p>alt_units : Units of the altitude input to function. Valid units are: m (meters), km (kilometers), ft (feet), miles (miles).</p></li>
+<li><p>speed: Speed of the object in m/s.</p></li>
+</ul>
+<ol class="arabic simple" start="3">
+<li><p>temp_conversion(properties, property_to_change, desired_unit)</p></li>
+</ol>
+<ul class="simple">
+<li><p>properties : A three-element list that describes the inputed altitude (km), along with the temperature (Celsius) and pressure (KiloPascal) of the air. This is typically the output of <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code> function.</p></li>
+<li><p>property_to_change :  Selected property for which units need to be changed. Valid inputs are: “altitude”, “temperature”, “pressure”</p></li>
+<li><p>desired_unit : The desired units for the selected property.</p></li>
+</ul>
+</section>
+<section id="contributing">
+<h2>Contributing<a class="headerlink" href="#contributing" title="Link to this heading"></a></h2>
+<p>Interested in contributing? Check out the contributing guidelines. Please note that this project is released with a Code of Conduct. By contributing to this project, you agree to abide by its terms.</p>
+</section>
+<section id="license">
+<h2>License<a class="headerlink" href="#license" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code> was created by Tianjiao Jiang, Zhengling Jiang, Francisco Ramirez. It is licensed under the terms of the MIT license.</p>
+</section>
+<section id="credits">
+<h2>Credits<a class="headerlink" href="#credits" title="Link to this heading"></a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code> was created with <a class="reference external" href="https://cookiecutter.readthedocs.io/en/latest/"><code class="docutils literal notranslate"><span class="pre">cookiecutter</span></code></a> and the <code class="docutils literal notranslate"><span class="pre">py-pkgs-cookiecutter</span></code> <a class="reference external" href="https://github.com/py-pkgs/py-pkgs-cookiecutter">template</a>.</p>
+</section>
+<section id="contributors">
+<h2>Contributors<a class="headerlink" href="#contributors" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Francisco Ramirez</p></li>
+<li><p>Zhengling Jiang</p></li>
+<li><p>Tianjiao Jiang</p></li>
+</ul>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="example.html" class="btn btn-neutral float-right" title="Example Usage - py_atmosphere" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Tianjiao Jiang, Zhengling Jiang, Francisco Ramirez.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
