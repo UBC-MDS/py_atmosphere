@@ -1,0 +1,46 @@
+py_atmosphere.temp_conversion
+=============================
+
+.. py:module:: py_atmosphere.temp_conversion
+
+
+Functions
+---------
+
+.. autoapisummary::
+
+   py_atmosphere.temp_conversion.temp_conversion
+
+
+Module Contents
+---------------
+
+.. py:function:: temp_conversion(properties, property_to_change, desired_unit)
+
+   Convert the units of a selected atmospheric property.
+
+   Parameters:
+   ------------
+   properties : List
+       A three-element list that describes the inputed altitude (km), along with the temperature (Celsius) and pressure (KiloPascal) of the air.
+       This is typically the output of `py_atmosphere` function.
+   property_to_change : str
+       Selected property for which units need to be changed. Valid inputs are: "altitude", "temperature", "pressure"
+   desired_unit : str
+       The desired units for the selected property.
+       Valid units for temperature: C (Celsius), F (Fahrenheit), K (Kelvin), R (Rankine)
+       Valid units for altitude: m (meters), km (kilometers), ft (feet), miles (miles)
+       Valid units for pressure: bar (bar), kPa (KiloPascal), psia (Pounds over square inch)
+
+
+   Returns:
+   ---------
+   list
+       A three-element list with the selected property converted to the specified units.
+
+   .. rubric:: Examples
+
+   >>> temp_conversion([0.0, 15.04, 101325], "temperature", "K")
+   [0.0, 288.19, 101325]
+
+

@@ -1,0 +1,511 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Example Usage - py_atmosphere &mdash; py_atmosphere  documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="_static/graphviz.css?v=fd3f3429" />
+
+  
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="_static/doctools.js?v=9a2dae69"></script>
+      <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Changelog" href="changelog.html" />
+    <link rel="prev" title="py_atmosphere" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            py_atmosphere
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Example Usage - <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#import-package-functions">Import Package Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#technical-background">Technical Background</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-py-atmosphere-function">The <code class="docutils literal notranslate"><span class="pre">py_atmosphere()</span></code> function</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#the-temp-conversion-function">The <code class="docutils literal notranslate"><span class="pre">temp_conversion()</span></code> function</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#temperature-conversions">Temperature Conversions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pressure-conversions">Pressure Conversions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#altitude-conversion">Altitude Conversion</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#the-mach-number-function">The <code class="docutils literal notranslate"><span class="pre">mach_number()</span></code> function</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1"><a class="reference internal" href="autoapi/index.html">API Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">py_atmosphere</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Example Usage - <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code></li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/example.ipynb.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="example-usage-py-atmosphere">
+<h1>Example Usage - <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code><a class="headerlink" href="#example-usage-py-atmosphere" title="Link to this heading"></a></h1>
+<p>This document displays how to use <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code> to extract atmospheric properties from the package, transform units and calculate Mach number for an object moving through stagnant air:</p>
+<section id="import-package-functions">
+<h2>Import Package Functions<a class="headerlink" href="#import-package-functions" title="Link to this heading"></a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">py_atmosphere.py_atmosphere</span><span class="w"> </span><span class="kn">import</span> <span class="n">py_atmosphere</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">py_atmosphere.mach_number</span><span class="w"> </span><span class="kn">import</span> <span class="n">mach_number</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">py_atmosphere.temp_conversion</span><span class="w"> </span><span class="kn">import</span> <span class="n">temp_conversion</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="technical-background">
+<h2>Technical Background<a class="headerlink" href="#technical-background" title="Link to this heading"></a></h2>
+<p>This package contains the mathematical representation of NASA’s Glenn Research Center <a class="reference external" href="https://www.grc.nasa.gov/www/k-12/airplane/atmosmet.html#:~:text=In%20the%20troposphere%2C%20the%20temperature,atmosphere%20model%20is%20also%20available">Earth Atmosphere Model</a>, which is a simplified representation of the International Standard Atmosphere.</p>
+<p>Under this context, the Earth’s atmosphere is considered a sheet of air extending from the Earth’s surface to the edge of space. Within the atmosphere, very complex chemical, thermodynamic and fluid dynamics effects occur. Given these effects, the properties of the air are constantly changing with time and place.</p>
+<p>These effects have the following instintive impacts:</p>
+<ul class="simple">
+<li><p>Given the effect that the sun has on the surface of the Earth, and how this heat is diffused up through the atmosphere, the air temperature is highest near the surface of the planet and decreases with increasing altitude.</p></li>
+<li><p>The pressure of the air is related to the weight of the air over a given location. As we increase altitude through the atmosphere, the amount of air above us is less. For this reason, air pressure decreases as altitude increases.</p></li>
+</ul>
+<p>These notions are incredibly important in the Aerospace industry, as how the atmosphere and the air properties change can have a direct impact in Aircraft operation throughout the flight envelope of an aircraft, for example. To help aircraft designers, it is useful to have a Standard Atmosphere model of the variation of properties throughout the atmosphere.</p>
+</section>
+<section id="the-py-atmosphere-function">
+<h2>The <code class="docutils literal notranslate"><span class="pre">py_atmosphere()</span></code> function<a class="headerlink" href="#the-py-atmosphere-function" title="Link to this heading"></a></h2>
+<p>First, we need to give a brief introduction to the modeled layers of the atmosphere.</p>
+<ul class="simple">
+<li><p>From 0 to 11,000 meters, we have the Troposphere.</p></li>
+<li><p>From 11,000 meters to 25,000 meters, we have the Lower Stratosphere.</p></li>
+<li><p>Beyond 25,000 meters, we have the Upper Stratosphere</p></li>
+</ul>
+<p>Note: This implementation of the model is restricted to an input altitude of 0m to 25,000 m. Higher altitudes require more complex modeling to avoid significant inaccuracies, which are out of the scope of this package. The selected range is sufficient when considering that the average altitude during cruise flight in civil aircraft is between 10,000 and 12,000 meters.</p>
+<p>The standard model consists of the following equations to calculate Temperature and Pressure given an Altitude.</p>
+<p>Variables:</p>
+<ul class="simple">
+<li><p>T = Temperature (°C - degrees Celsius)</p></li>
+<li><p>P = Pressure (K-Pa - KiloPascal)</p></li>
+<li><p>h = Altitude (m - meters)</p></li>
+</ul>
+<p>In the Troposphere, for $h &lt; 11,000m$:</p>
+<p>$T = 15.04 - 0.00649*h$</p>
+<p>$P = 101.29 * [{\frac{T + 273.1}{288.08}}]^{5.256}$</p>
+<p>In the Lower Stratosphere, for $11,000m &lt; h &lt; 25,000m$:</p>
+<p>$T = -56.46$</p>
+<p>$P = 22.65 * e^{1.73-0.000157*h}$</p>
+<p>For the Upper Stratosphere, for $h &gt; 25,000m$:</p>
+<p>$T = -131.21 + 0.00299*h$</p>
+<p>$P = 2.488 * [{\frac{T + 273.1}{216.6}}]^{-11.388}$</p>
+<p>Considering these equations, we can use the <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code> function to calculate the standard pressure and temperature given an altitude. Depending on the inquired altitude, the package will select the appropriate set of equations to calculate Temperature and Pressure.</p>
+<p>Note that the inquired altitude may be entered in different units:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">m</span></code> for meters</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">km</span></code> for kilometers</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">feet</span></code> for feet</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">miles</span></code> for miles</p></li>
+</ul>
+<p>Example: Calculate the Pressure and Temperature at an altitude of 0 meters, 10 kilometers, 10,000 ft and 15 miles:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">py_atmosphere</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 15.04, 101.29]
+</pre></div>
+</div>
+</div>
+</div>
+<p>How to read the output: At an altitude of 0 meters, the standard atmosphere calculates an air Temperature of 15°C and air Pressure of 101.29 kiloPascals.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">py_atmosphere</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s2">&quot;km&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[10000, -49.86000000000001, 26.547435615976987]
+</pre></div>
+</div>
+</div>
+</div>
+<p>How to read the output: At an altitude of 10 kilometers, the standard atmosphere calculates an air Temperature of -49.86°C and air Pressure of 26.54 kiloPascals. Note that the output converts entered altitude to meters. In this case, 1 kilometer is equal to 10,000 meters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">py_atmosphere</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;ft&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3048.0, -4.741520000000001, 69.84232244791907]
+</pre></div>
+</div>
+</div>
+</div>
+<p>How to read the output: At an altitude of 10,000 feet, the standard atmosphere calculates an air Temperature of -4.74°C and air Pressure of 69.84 kiloPascals. Note that the output converts entered altitude to meters. In this case, 10,000 feet is equal to 3,048 meters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">py_atmosphere</span><span class="p">(</span><span class="mi">15</span><span class="p">,</span> <span class="s2">&quot;miles&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[24140.1, -56.46, 2.886844831523778]
+</pre></div>
+</div>
+</div>
+</div>
+<p>How to read the output: At an altitude of 15 miles, the standard atmosphere calculates an air Temperature of -56.46°C and air Pressure of 2.88 kiloPascals. Note that the output converts entered altitude to meters. In this case, 15 miles is equal to 24,140 meters.</p>
+<p>As mentioned, the function does not work for altitude outside of the range of 0 to 25,000 meters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">py_atmosphere</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">. Altitude must be a non-negative value&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Expected error: Altitude must be a non-negative value. Altitude must be a non-negative value
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">py_atmosphere</span><span class="p">(</span><span class="mi">25001</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">)</span>
+<span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Expected error: </span><span class="si">{</span><span class="n">e</span><span class="si">}</span><span class="s2">. Invalid altitude value. Model maximum value is 25,000 m.&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Expected error: Invalid altitude value. Model maximum value is 25,000 m.. Invalid altitude value. Model maximum value is 25,000 m.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-temp-conversion-function">
+<h2>The <code class="docutils literal notranslate"><span class="pre">temp_conversion()</span></code> function<a class="headerlink" href="#the-temp-conversion-function" title="Link to this heading"></a></h2>
+<p>Given the frequent need to see these properties in different units, the <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code> package contains a function to perform convenient conversions for altitude, temperature and pressure. The input and output of this function shares the same list structure as the output from the <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code> function.</p>
+<p>This function requires the user to select which property needs conversion and to which units. Note that the package can currently perform only one conversion at a time.</p>
+<p>The conversion units accepted for each property are:</p>
+<ul class="simple">
+<li><p>Altitude: “m” for meters, “km” for kilometers, “ft” for feet, and “miles” for miles.</p></li>
+<li><p>Temperature: “C” for Celsius, “F” for Fahrenheit, “K” for Kelvin, and “R” for Rankine.</p></li>
+<li><p>Pressure: “kPa” for KiloPascal, “bar” for Pascal, and “psia” for pounds per square inch.</p></li>
+</ul>
+<section id="temperature-conversions">
+<h3>Temperature Conversions<a class="headerlink" href="#temperature-conversions" title="Link to this heading"></a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_temperature</span> <span class="o">=</span> <span class="n">py_atmosphere</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">)</span>
+<span class="n">example_temperature</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 15.04, 101.29]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_conversion</span><span class="p">(</span><span class="n">example_temperature</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;C&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 15.04, 101.29]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_conversion</span><span class="p">(</span><span class="n">example_temperature</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;F&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 59.071999999999996, 101.29]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_conversion</span><span class="p">(</span><span class="n">example_temperature</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;K&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 288.19, 101.29]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_conversion</span><span class="p">(</span><span class="n">example_temperature</span><span class="p">,</span> <span class="s2">&quot;temperature&quot;</span><span class="p">,</span> <span class="s2">&quot;R&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 518.742, 101.29]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="pressure-conversions">
+<h3>Pressure Conversions<a class="headerlink" href="#pressure-conversions" title="Link to this heading"></a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_pressure</span> <span class="o">=</span> <span class="n">py_atmosphere</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">)</span>
+<span class="n">example_pressure</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 15.04, 101.29]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_conversion</span><span class="p">(</span><span class="n">example_pressure</span><span class="p">,</span> <span class="s2">&quot;pressure&quot;</span><span class="p">,</span> <span class="s2">&quot;kPa&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 15.04, 101.29]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_conversion</span><span class="p">(</span><span class="n">example_pressure</span><span class="p">,</span> <span class="s2">&quot;pressure&quot;</span><span class="p">,</span> <span class="s2">&quot;bar&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 15.04, 1.0129000000000001]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_conversion</span><span class="p">(</span><span class="n">example_pressure</span><span class="p">,</span> <span class="s2">&quot;pressure&quot;</span><span class="p">,</span> <span class="s2">&quot;psia&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 15.04, 14.690868633000001]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="altitude-conversion">
+<h3>Altitude Conversion<a class="headerlink" href="#altitude-conversion" title="Link to this heading"></a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">example_altitude</span> <span class="o">=</span> <span class="n">py_atmosphere</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">)</span>
+<span class="n">example_altitude</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1000, 8.549999999999999, 90.04204320972651]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_conversion</span><span class="p">(</span><span class="n">example_altitude</span><span class="p">,</span> <span class="s2">&quot;altitude&quot;</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1000, 8.549999999999999, 90.04204320972651]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_conversion</span><span class="p">(</span><span class="n">example_altitude</span><span class="p">,</span> <span class="s2">&quot;altitude&quot;</span><span class="p">,</span> <span class="s2">&quot;km&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1.0, 8.549999999999999, 90.04204320972651]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_conversion</span><span class="p">(</span><span class="n">example_altitude</span><span class="p">,</span> <span class="s2">&quot;altitude&quot;</span><span class="p">,</span> <span class="s2">&quot;ft&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[3280.84, 8.549999999999999, 90.04204320972651]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">temp_conversion</span><span class="p">(</span><span class="n">example_altitude</span><span class="p">,</span> <span class="s2">&quot;altitude&quot;</span><span class="p">,</span> <span class="s2">&quot;miles&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.621371, 8.549999999999999, 90.04204320972651]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="the-mach-number-function">
+<h2>The <code class="docutils literal notranslate"><span class="pre">mach_number()</span></code> function<a class="headerlink" href="#the-mach-number-function" title="Link to this heading"></a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code> package is also prepared to calculate the Mach Number of a moving object in stagnant air.</p>
+<p>Taking a step back, it is necessary to describe the concept of <a class="reference external" href="https://www.grc.nasa.gov/www/BGH/sound.html">Speed of Sound</a>. Speed of sound (<code class="docutils literal notranslate"><span class="pre">a</span></code>) is the speed in which sound (or formally, a sound wave) propagates though a medium. In an ideal gas (a common assumption in design activities that describes how gases beave), the speed of sound is only dependent on the medium’s temperature and composition.</p>
+<p>$a = \sqrt{\gamma RT}$</p>
+<p>Where:</p>
+<ul class="simple">
+<li><p>Air property $\gamma$ - Ratio of specific heats - $1.4$ for air.</p></li>
+<li><p>Air property <code class="docutils literal notranslate"><span class="pre">R</span></code> - Gas constant - $287.05 J / kg * K$</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">T</span></code> - Air temperature in K</p></li>
+</ul>
+<p>The Mach Number is dimensionless quantity in fluid dynamics that represents the ratio of flow velocity around a boundary relative to the local speed of sound. In aerospace applications, this ratio represents the relation between an aircraft’s speed as it moves through stagnant air, where the local speed of sound is a property that is only function of the local temperature.</p>
+<p>The Mach number is widely used throughout fluid mechanics applications as it is descriptive of the compressibility of the fluids. In the Aerospace industry it is also descriptive of subsonic, sonic and supersonic flight. Therefore, it is an invaluable design parameter.</p>
+<p>$Ma = \frac{c}{a}$</p>
+<p>Where:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">a</span></code> - Speed of Sound in medium</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">c</span></code> - Speed of an object through same medium</p></li>
+</ul>
+<p>The <code class="docutils literal notranslate"><span class="pre">mach_number</span></code> function takes the temperature calculated by the <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code> function, and along with an input <code class="docutils literal notranslate"><span class="pre">speed</span></code> of an object, it calculates the Mach Number. Given that temperature is a function of altitude, we can see that for an object moving at a constant speed, the Mach number changes with altitude, as temperature changes as well.</p>
+<p>Under this consideration, the <code class="docutils literal notranslate"><span class="pre">mach_number</span></code> function receives an <code class="docutils literal notranslate"><span class="pre">altitude</span></code>, altitude <code class="docutils literal notranslate"><span class="pre">units</span></code> and object <code class="docutils literal notranslate"><span class="pre">speed</span></code> in meters per second. Note that just as the <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code> function, <code class="docutils literal notranslate"><span class="pre">mach_number</span></code> also accepts altitude units in “m” for meters, “km” for kilometers, “ft” for feet, and “miles” for miles.</p>
+<p>Example:</p>
+<p>What is the Mach Number of an object moving at 350 m/s?</p>
+<p>Note: A Mach Number &lt; 1 describes “subsonic” flight, a Mach Number = 1 describes “sonic” flight, and Mach Number &gt; 1 describes “supersonic” flight.</p>
+<p>First, at an altitude of 0 meters:</p>
+<p>We can see that an object moving at 300 m/s at an altitude of 0 meters describes a “Subsonic” movement.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mach_number</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8815338791328668
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that an object moving at the same 300 m/s, but at an altitude of 10,000 meters, describes supersonic flight (in other words, it is breaking the sound barrier!)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mach_number</span><span class="p">(</span><span class="mi">10000</span><span class="p">,</span> <span class="s2">&quot;m&quot;</span><span class="p">,</span> <span class="mi">300</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.0014835599066014
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="py_atmosphere" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="changelog.html" class="btn btn-neutral float-right" title="Changelog" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Tianjiao Jiang, Zhengling Jiang, Francisco Ramirez.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,178 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>py_atmosphere.mach_number &mdash; py_atmosphere  documentation</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/graphviz.css?v=fd3f3429" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
+      <script src="../../../_static/doctools.js?v=9a2dae69"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="py_atmosphere.py_atmosphere" href="../py_atmosphere/index.html" />
+    <link rel="prev" title="py_atmosphere" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            py_atmosphere
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../../example.html">Example Usage - <code class="docutils literal notranslate"><span class="pre">py_atmosphere</span></code></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../changelog.html">Changelog</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../contributing.html">Contributing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../conduct.html">Code of Conduct</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">API Reference</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">py_atmosphere</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="../index.html#submodules">Submodules</a><ul class="current">
+<li class="toctree-l4 current"><a class="current reference internal" href="#">py_atmosphere.mach_number</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../py_atmosphere/index.html">py_atmosphere.py_atmosphere</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../temp_conversion/index.html">py_atmosphere.temp_conversion</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#attributes">Attributes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../index.html#package-contents">Package Contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">py_atmosphere</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">API Reference</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">py_atmosphere</a></li>
+      <li class="breadcrumb-item active">py_atmosphere.mach_number</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/autoapi/py_atmosphere/mach_number/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="module-py_atmosphere.mach_number">
+<span id="py-atmosphere-mach-number"></span><h1>py_atmosphere.mach_number<a class="headerlink" href="#module-py_atmosphere.mach_number" title="Link to this heading"></a></h1>
+<section id="functions">
+<h2>Functions<a class="headerlink" href="#functions" title="Link to this heading"></a></h2>
+<table class="autosummary longtable docutils align-default">
+<tbody>
+<tr class="row-odd"><td><p><a class="reference internal" href="#py_atmosphere.mach_number.mach_number" title="py_atmosphere.mach_number.mach_number"><code class="xref py py-obj docutils literal notranslate"><span class="pre">mach_number</span></code></a>(altitude, alt_units, speed)</p></td>
+<td><p>Calculate the Mach number of an object moving at a given altitude.</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="module-contents">
+<h2>Module Contents<a class="headerlink" href="#module-contents" title="Link to this heading"></a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="py_atmosphere.mach_number.mach_number">
+<span class="sig-prename descclassname"><span class="pre">py_atmosphere.mach_number.</span></span><span class="sig-name descname"><span class="pre">mach_number</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">altitude</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">alt_units</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../../../_modules/py_atmosphere/mach_number.html#mach_number"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#py_atmosphere.mach_number.mach_number" title="Link to this definition"></a></dt>
+<dd><p>Calculate the Mach number of an object moving at a given altitude.</p>
+<p>Given an altitude, and assumptions of air composition, this function calculates the speed of sound in m/s in
+specific altitude using the formula: speed of sound = c = sqrt(gamma * R * T), where <cite>gamma</cite> and <cite>R</cite> are
+standard air properties, and <cite>T</cite> is the temperature at the given altitude. Then it calculates the Mach number
+of an object moving in said environment.
+The ratio of specific heats, gamma is 1.4.
+The gas constant R is 287.1 J/kg/K.
+Celsius to Kevin: Celsius + 273.15.</p>
+<section id="parameters">
+<h3>Parameters:<a class="headerlink" href="#parameters" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>altitude<span class="classifier">float</span></dt><dd><p>A numeric value that represents the altitude of interest. This value is the reference to extract air properties, specifically, temperature, pressure and density.</p>
+</dd>
+<dt>alt_units<span class="classifier">str</span></dt><dd><p>Units of the altitude input to function. Valid units are: m (meters), km (kilometers), ft (feet), miles (miles).</p>
+</dd>
+<dt>speed: float</dt><dd><p>Speed of the object in m/s.</p>
+</dd>
+</dl>
+</section>
+<section id="returns">
+<h3>Returns:<a class="headerlink" href="#returns" title="Link to this heading"></a></h3>
+<dl class="simple">
+<dt>float</dt><dd><p>The Mach number (adimensional) in specific altitude, calculated as: speed / speed of sound as calculated in speed_of_sound function.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">mach_number</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="s2">&quot;ft&quot;</span><span class="p">,</span> <span class="mf">340.4</span><span class="p">)</span>
+<span class="go">1.0</span>
+</pre></div>
+</div>
+</section>
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="py_atmosphere" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../py_atmosphere/index.html" class="btn btn-neutral float-right" title="py_atmosphere.py_atmosphere" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025, Tianjiao Jiang, Zhengling Jiang, Francisco Ramirez.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
