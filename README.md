@@ -1,5 +1,10 @@
 # py_atmosphere
 
+[![Documentation Status](https://readthedocs.org/projects/py_atmosphere/badge/?version=latest)](https://py_atmosphere.readthedocs.io/en/latest/?badge=latest)
+
+[![codecov](https://codecov.io/gh/UBC-MDS/py_atmosphere/graph/badge.svg?token=0KMZ9OEBGI)](https://codecov.io/gh/tUBC-MDS/py_atmosphere)
+
+
 The International Standard Atmosphere (ISA) is an atmospheric model of how pressure, temperature, density of the Earth's atmosphere change over a wide range of altitudes. It is published by the International Organization for Standardization (ISO) as an International Standard [ISO 2533:1975](https://www.iso.org/standard/7472.html).
 
 The International Civil Aviation Organization ([ICAO](https://www.icao.int/Pages/default.aspx)) uses this atmospheric models as baseline in its own standard enforcing. This standard is extensively used in the Aerospace industry for aircraft and engine design tasks considering operational envelopes.
