@@ -1,6 +1,6 @@
 # py_atmosphere
 
-[![Documentation Status](https://readthedocs.org/projects/py_atmosphere/badge/?version=latest)]([https://py_atmosphere.readthedocs.io/en/latest/?badge=latest](https://py-atmosphere.readthedocs.io/en/latest/)
+[![Documentation Status](https://readthedocs.org/projects/py_atmosphere/badge/?version=latest)]([https://py_atmosphere.readthedocs.io/en/latest/?badge=latest](https://py-atmosphere.readthedocs.io/en/latest/#))
 
 [![codecov](https://codecov.io/gh/UBC-MDS/py_atmosphere/graph/badge.svg?token=0KMZ9OEBGI)](https://codecov.io/gh/tUBC-MDS/py_atmosphere)
 
