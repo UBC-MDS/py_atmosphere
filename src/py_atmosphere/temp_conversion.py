@@ -5,7 +5,7 @@ def temp_conversion(properties, property_to_change, desired_unit):
     Parameters:
     ----------
     properties : List
-        A three-element list that describes the inputed altitude (km), along with the temperature (Celsius) and pressure (Pascal) of the air. 
+        A three-element list that describes the inputed altitude (km), along with the temperature (Celsius) and pressure (KiloPascal) of the air. 
         This is typically the output of `py_atmosphere` function.
     property_to_change : str
         Selected property for which units need to be changed. Valid inputs are: "altitude", "temperature", "pressure"
@@ -13,7 +13,7 @@ def temp_conversion(properties, property_to_change, desired_unit):
         The desired units for the selected property.
         Valid units for temperature: C (Celsius), F (Fahrenheit), K (Kelvin), R (Rankine)
         Valid units for altitude: m (meters), km (kilometers), ft (feet), miles (miles)
-        Valid units for pressure: bar (bar), Pa (Pascal), psia (Pounds over square inch)
+        Valid units for pressure: bar (bar), kPa (KiloPascal), psia (Pounds over square inch)
         
 
     Returns:
@@ -64,15 +64,15 @@ def temp_conversion(properties, property_to_change, desired_unit):
     # Check if property is 'pressure'
     elif property_to_change == "pressure":
         pressure_pa = properties[2]  # Pressure in Pascal
-        if desired_unit == "Pa":
-            # If the desired unit is Pascal, no change needed
+        if desired_unit == "kPa":
+            # If the desired unit is KiloPascal, no change needed
             pass
         elif desired_unit == "bar":
-            output_p = pressure_pa / 1e5  # Convert Pascal to bar
+            output_p = pressure_pa / 100  # Convert KiloPascal to bar
         elif desired_unit == "psia":
-            output_p = pressure_pa / 6894.76  # Convert Pascal to psia
+            output_p = pressure_pa * 0.1450377  # Convert KiloPascal to psia
         else:
-            raise ValueError("Invalid desired unit for pressure. Valid units are: 'Pa', 'bar', 'psia'.")
+            raise ValueError("Invalid desired unit for pressure. Valid units are: 'kPa', 'bar', 'psia'.")
     
     else:
         raise ValueError("Invalid property. Valid properties are: 'altitude', 'temperature', 'pressure'.")
