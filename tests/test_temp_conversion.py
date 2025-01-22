@@ -3,14 +3,14 @@ from py_atmosphere.temp_conversion import temp_conversion
 import math
 
 @pytest.mark.parametrize("properties, property_to_change, desired_unit, expected_result", [
-    ([0.0, 15.04, 101325], "temperature", "K", [0.0, 288.19, 101325]),  
-    ([0.0, 15.04, 101325], "temperature", "F", [0.0, 59.07, 101325]),  
-    ([0.0, 15.04, 101325], "pressure", "bar", [0.0, 15.04, 1.01325]),  
-    ([0.0, 15.04, 101325], "pressure", "psia", [0.0, 15.04, 14.696]),  
-    ([1000.0, 8.54, 89874], "altitude", "km", [1.0, 8.54, 89874]),  
-    ([1000.0, 8.54, 89874], "altitude", "ft", [3280.84, 8.54, 89874]),  
-    ([1000.0, 8.54, 89874], "altitude", "miles", [0.621371, 8.54, 89874]),  
-    ([0.0, 15.04, 101325], "temperature", "R", [0.0, 518.74, 101325]),
+    ([0.0, 15.04, 101.325], "temperature", "K", [0.0, 288.19, 101.325]),  
+    ([0.0, 15.04, 101.325], "temperature", "F", [0.0, 59.07, 101.325]),  
+    ([0.0, 15.04, 101.325], "pressure", "bar", [0.0, 15.04, 1.01325]),  
+    ([0.0, 15.04, 101.325], "pressure", "psia", [0.0, 15.04, 14.696]),  
+    ([1000.0, 8.54, 89.874], "altitude", "km", [1.0, 8.54, 89.874]),  
+    ([1000.0, 8.54, 89.874], "altitude", "ft", [3280.84, 8.54, 89.874]),  
+    ([1000.0, 8.54, 89.874], "altitude", "miles", [0.621371, 8.54, 89.874]),  
+    ([0.0, 15.04, 101.325], "temperature", "R", [0.0, 518.74, 101.325]),
 ])
 def test_valid_conversion(properties, property_to_change, desired_unit, expected_result):
     """Test valid conversions for temperature, altitude, and pressure."""
@@ -32,9 +32,9 @@ def test_valid_conversion(properties, property_to_change, desired_unit, expected
 
 
 @pytest.mark.parametrize("properties, property_to_change, desired_unit", [
-    ([0.0, 15.04, 101325], "temperature", "Celsius"),  # Invalid temperature unit
-    ([1000.0, 8.54, 89874], "altitude", "meters"),  # Invalid altitude unit
-    ([0.0, 15.04, 101325], "pressure", "atm"),  # Invalid pressure unit
+    ([0.0, 15.04, 101.325], "temperature", "Celsius"),  # Invalid temperature unit
+    ([1000.0, 8.54, 89.874], "altitude", "meters"),  # Invalid altitude unit
+    ([0.0, 15.04, 101.325], "pressure", "atm"),  # Invalid pressure unit
 ])
 def test_invalid_unit_error(properties, property_to_change, desired_unit):
     """Test error handling for invalid units."""
@@ -43,7 +43,7 @@ def test_invalid_unit_error(properties, property_to_change, desired_unit):
 
 
 @pytest.mark.parametrize("properties, property_to_change, desired_unit", [
-    ([0.0, 15.04, 101325], "speed", "K"),  # Invalid property
+    ([0.0, 15.04, 101.325], "speed", "K"),  # Invalid property
 ])
 def test_invalid_property_error(properties, property_to_change, desired_unit):
     """Test error handling for invalid property."""
@@ -53,12 +53,12 @@ def test_invalid_property_error(properties, property_to_change, desired_unit):
 
 def test_no_conversion_needed():
     """Test if no conversion is performed when requested unit matches the current unit."""
-    properties = [0.0, 15.04, 101325]
+    properties = [0.0, 15.04, 101.325]
     result = temp_conversion(properties, "temperature", "C")
     assert result == properties, "No conversion should occur when the desired unit matches the current unit."
 
     result = temp_conversion(properties, "altitude", "m")
     assert result == properties, "No conversion should occur when the desired unit matches the current unit."
 
-    result = temp_conversion(properties, "pressure", "Pa")
+    result = temp_conversion(properties, "pressure", "kPa")
     assert result == properties, "No conversion should occur when the desired unit matches the current unit."

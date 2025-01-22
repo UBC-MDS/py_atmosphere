@@ -56,7 +56,7 @@ $ pip install py_atmosphere
 - speed: Speed of the object in m/s.
 
 3. temp_conversion(properties, property_to_change, desired_unit)
-- properties : A three-element list that describes the inputed altitude (km), along with the temperature (Celsius) and pressure (Pascal) of the air. This is typically the output of `py_atmosphere` function. 
+- properties : A three-element list that describes the inputed altitude (km), along with the temperature (Celsius) and pressure (KiloPascal) of the air. This is typically the output of `py_atmosphere` function. 
 - property_to_change :  Selected property for which units need to be changed. Valid inputs are: "altitude", "temperature", "pressure"
 - desired_unit : The desired units for the selected property.
 
