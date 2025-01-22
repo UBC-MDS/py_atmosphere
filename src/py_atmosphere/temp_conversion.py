@@ -3,7 +3,7 @@ def temp_conversion(properties, property_to_change, desired_unit):
     Convert the units of a selected atmospheric property.
 
     Parameters:
-    ----------
+    ------------
     properties : List
         A three-element list that describes the inputed altitude (km), along with the temperature (Celsius) and pressure (KiloPascal) of the air. 
         This is typically the output of `py_atmosphere` function.
@@ -17,12 +17,12 @@ def temp_conversion(properties, property_to_change, desired_unit):
         
 
     Returns:
-    -------
+    ---------
     list
         A three-element list with the selected property converted to the specified units.
 
     Examples
-    --------
+    ----------
     >>> temp_conversion([0.0, 15.04, 101325], "temperature", "K")
     [0.0, 288.19, 101325]
     """

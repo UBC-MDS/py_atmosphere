@@ -14,7 +14,7 @@ def mach_number(altitude, alt_units, speed):
     Celsius to Kevin: Celsius + 273.15.
 
     Parameters:
-    ----------
+    ------------
     altitude : float
         A numeric value that represents the altitude of interest. This value is the reference to extract air properties, specifically, temperature, pressure and density.
     alt_units : str
@@ -23,12 +23,12 @@ def mach_number(altitude, alt_units, speed):
         Speed of the object in m/s.
 
     Returns:
-    -------
+    ---------
     float
         The Mach number (adimensional) in specific altitude, calculated as: speed / speed of sound as calculated in speed_of_sound function.
 
     Examples
-    --------
+    ----------
     >>> mach_number(0.0, "ft", 340.4)
     1.0
     """

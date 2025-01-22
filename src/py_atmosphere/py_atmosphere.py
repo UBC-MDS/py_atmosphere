@@ -11,19 +11,19 @@ def py_atmosphere(altitude, alt_units):
     Basic equations used: https://www.grc.nasa.gov/www/k-12/airplane/atmosmet.html#:~:text=In%20the%20troposphere%2C%20the%20temperature,atmosphere%20model%20is%20also%20available.
     
     Parameters:
-    ----------
+    ------------
     altitude : float
         A numeric value that represents the altitude of interest. This value is the reference to extract air properties, specifically, temperature and pressure.
     alt_units : str
         The unit of the input altitude. Valid units are: m (meters), km (kilometers), ft (feet), miles (miles)
 
     Returns:
-    -------
+    ---------
     list
         A list containing four elements that describes the inputed altitude (m), along with the temperature (Celsius) and pressure (KiloPascal).
 
     Examples
-    --------
+    ----------
     >>> py_atmosphere(0.0, "ft")
     [0.0, 15.04, 101.29]
     >>> py_atmosphere(11000.0, "m")
