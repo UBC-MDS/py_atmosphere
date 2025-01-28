@@ -1,5 +1,5 @@
 import pytest
-from py_atmosphere.mach_number import mach_number
+from py_atmosphere_ubc.mach_number import mach_number
 import math
 
 

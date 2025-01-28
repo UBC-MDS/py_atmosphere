@@ -1,5 +1,5 @@
 import math
-from py_atmosphere.py_atmosphere import py_atmosphere
+from py_atmosphere_ubc.py_atmosphere import py_atmosphere
 
 def mach_number(altitude, alt_units, speed):
     """

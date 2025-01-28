@@ -1,5 +1,5 @@
 import pytest
-from py_atmosphere.py_atmosphere import py_atmosphere
+from py_atmosphere_ubc.py_atmosphere import py_atmosphere
 import math
 
 baseline_output_0m = [0.0, 15.04, 101.29]

@@ -1,5 +1,5 @@
 import pytest
-from py_atmosphere.temp_conversion import temp_conversion 
+from py_atmosphere_ubc.temp_conversion import temp_conversion 
 import math
 
 @pytest.mark.parametrize("properties, property_to_change, desired_unit, expected_result", [
