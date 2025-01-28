@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "py_atmosphere"
-version = "1.1.0"
+version = "0.2.0"
 description = "Calculate standard air properties given altitude input in specific units!"
 authors = ["Tianjiao Jiang, Zhengling Jiang, Francisco Ramirez"]
 license = "MIT"
