@@ -1,6 +1,16 @@
 # CHANGELOG
 
 
+## v0.3.0 (2025-01-28)
+
+### Features
+
+- Update README.md
+  ([`87c2b4e`](https://github.com/UBC-MDS/py_atmosphere/commit/87c2b4e1ea55fe12eff90557224d5644c9b7f2f9))
+
+feat: Testing publishing on TestPyPi
+
+
 ## v0.2.0 (2025-01-28)
 
 ### Features
