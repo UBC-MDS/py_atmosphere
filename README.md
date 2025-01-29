@@ -92,3 +92,21 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 - Francisco Ramirez fraramfra@gmail.com
 - Zhengling Jiang cjiang1280@gmail.com
 - Tianjiao Jiang jiangtj000@gmail.com
+
+## Reference 
+
+International Organization for Standardization. (1975). ISO 2533:1975 - International Standard Atmosphere (ISA). Retrieved from https://www.iso.org/standard/7472.html
+
+International Civil Aviation Organization (ICAO). (n.d.). ICAO Homepage. Retrieved from https://www.icao.int/Pages/default.aspx
+
+NASA's Glenn Research Center. (n.d.). Atmospheric Model for the Earth's Atmosphere. Retrieved from https://www.grc.nasa.gov/www/k-12/airplane/atmosmet.html
+
+PyPI. (n.d.). atmos. Retrieved from https://pypi.org/project/atmos/
+
+PyPI. (n.d.). MetPy. Retrieved from https://pypi.org/project/MetPy/
+
+PyPI. (n.d.). pyatmos. Retrieved from https://pypi.org/project/pyatmos/
+
+Cookiecutter. (n.d.). Cookiecutter Documentation. Retrieved from https://cookiecutter.readthedocs.io/en/latest/
+
+GitHub. (n.d.). py-pkgs-cookiecutter Template. Retrieved from https://github.com/py-pkgs/py-pkgs-cookiecutter
