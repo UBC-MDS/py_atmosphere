@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.3.4 (2025-01-29)
+
+### Bug Fixes
+
+- Change the package name in the installation section
+  ([`21680e9`](https://github.com/UBC-MDS/py_atmosphere/commit/21680e93c10f0cddc54f20b9e405786bab3f51d9))
+
+
 ## v0.3.3 (2025-01-29)
 
 ### Bug Fixes
