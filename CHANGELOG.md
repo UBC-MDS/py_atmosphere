@@ -1,6 +1,16 @@
 # CHANGELOG
 
 
+## v0.3.1 (2025-01-29)
+
+### Bug Fixes
+
+- Update README.md
+  ([`2635932`](https://github.com/UBC-MDS/py_atmosphere/commit/26359325def33a18e0311b8aa4b0f63943637931))
+
+Test to trigger ci-cd and publish to testpypi
+
+
 ## v0.3.0 (2025-01-28)
 
 ### Features
