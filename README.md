@@ -89,6 +89,6 @@ Interested in contributing? Check out the contributing guidelines. Please note t
 
 ## Contributors 
 
-- Francisco Ramirez
-- Zhengling Jiang 
-- Tianjiao Jiang
+- Francisco Ramirez fraramfra@gmail.com
+- Zhengling Jiang cjiang1280@gmail.com
+- Tianjiao Jiang jiangtj000@gmail.com
