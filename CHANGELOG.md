@@ -1,6 +1,17 @@
 # CHANGELOG
 
 
+## v0.3.3 (2025-01-29)
+
+### Bug Fixes
+
+- Renaming package in toml and ci-cd.yml to allow publishing
+  ([`dfd1c75`](https://github.com/UBC-MDS/py_atmosphere/commit/dfd1c75d8884a76e0a5f22791b0daef44ec6a8d1))
+
+- Updating __init__.py with new package name for CI-CD
+  ([`aec8c73`](https://github.com/UBC-MDS/py_atmosphere/commit/aec8c7308118dc6e6e628e98a2b4842c5af32b94))
+
+
 ## v0.3.2 (2025-01-29)
 
 ### Bug Fixes
