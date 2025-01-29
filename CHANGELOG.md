@@ -1,6 +1,14 @@
 # CHANGELOG
 
 
+## v0.3.2 (2025-01-29)
+
+### Bug Fixes
+
+- Feedback addressed by adding clear test suite instructions in README
+  ([`4896bb5`](https://github.com/UBC-MDS/py_atmosphere/commit/4896bb57798edb0c0ca95e59d32f5de7e09326be))
+
+
 ## v0.3.1 (2025-01-29)
 
 ### Bug Fixes
