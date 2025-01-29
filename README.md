@@ -64,7 +64,15 @@ $ pip install py_atmosphere
 - desired_unit : The desired units for the selected property.
 
 
-
+## Run the tests
+1. Run the following command in terminal to execute the tests:
+  ```bash
+   pytest tests/
+  ```
+3. Run the following command in terminal to execute the coverage of the tests: <br>
+  ```bash
+   pytest --cov=py_atmosphere --cov-branch
+  ```
 
 
 ## Contributing
