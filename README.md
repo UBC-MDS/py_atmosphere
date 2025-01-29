@@ -37,7 +37,7 @@ Use of the standard model on practical aerospace applications is quite limited. 
 ## Installation
 
 ```bash
-$ pip install py_atmosphere
+pip install py_atmosphere_mach
 ```
 
 ## Usage
