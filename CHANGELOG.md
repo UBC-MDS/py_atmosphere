@@ -36,7 +36,9 @@ Added Reference list and email address
 
 ### Bug Fixes
 
-- Change the package name in the installation section
+- Feedback addressed by Zhengling
+
+Change the package name in the installation section
   ([`21680e9`](https://github.com/UBC-MDS/py_atmosphere/commit/21680e93c10f0cddc54f20b9e405786bab3f51d9))
 
 
@@ -55,7 +57,9 @@ Added Reference list and email address
 
 ### Bug Fixes
 
-- Feedback addressed by adding clear test suite instructions in README
+- Feedback addressed by Zhengling
+
+Feedback addressed by adding clear test suite instructions in README
   ([`4896bb5`](https://github.com/UBC-MDS/py_atmosphere/commit/4896bb57798edb0c0ca95e59d32f5de7e09326be))
 
 
