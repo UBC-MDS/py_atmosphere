@@ -1,6 +1,16 @@
 # CHANGELOG
 
 
+## v0.3.7 (2025-01-31)
+
+### Bug Fixes
+
+- Feedback addressed by Tianjiao
+  ([`7216e67`](https://github.com/UBC-MDS/py_atmosphere/commit/7216e67849be16270db68ea7ab994e70575f22f2))
+
+Edit typo in README.md Add dependencies
+
+
 ## v0.3.6 (2025-01-30)
 
 ### Bug Fixes
