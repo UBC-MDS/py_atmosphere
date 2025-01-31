@@ -1,6 +1,27 @@
 # CHANGELOG
 
 
+## v0.3.6 (2025-01-30)
+
+### Bug Fixes
+
+- Feedback addressed by Francisco Ramirez
+  ([`bf91cb4`](https://github.com/UBC-MDS/py_atmosphere/commit/bf91cb40ed7e6faa497cf04ced74feaf8ccf730c))
+
+Updated introduction on README to include a note on the target audience (Aerospace Industry) for the
+  package.
+
+
+## v0.3.5 (2025-01-29)
+
+### Bug Fixes
+
+- Feedback addressed by Tianjiao
+  ([`6d3010f`](https://github.com/UBC-MDS/py_atmosphere/commit/6d3010fd59ebb19d3cd775402fd7dcf478c3cd0b))
+
+Added Reference list and email address
+
+
 ## v0.3.4 (2025-01-29)
 
 ### Bug Fixes

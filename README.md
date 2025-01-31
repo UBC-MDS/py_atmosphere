@@ -11,6 +11,8 @@ A simplified, but useful version of the ICAO standard atmospheric model was crea
 
 This package contains the simplified NASA's GRC Earth Atmospheric model and calculates atmospheric air properties for an altitude of interest, as well as supports Mach number calculation for a moving object in space at the same altitude.
 
+Having a notion of how the air's properties change across different levels of the atmosphere are incredibly important in the Aerospace industry, as these properties have a direct impact in aircraft operation throughout the flight envelope of an aircraft, for example. To help aircraft designers, it is useful to have a Standard Atmosphere model of the variation of properties throughout the atmosphere.
+
 ## Package Functions
 
 The package includes the following Functions included in package:
