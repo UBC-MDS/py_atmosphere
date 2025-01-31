@@ -19,11 +19,11 @@ The package includes the following Functions included in package:
 
 - `py_atmosphere.py` - Function calculates the NASA's GRC ambient temperature, pressure and density of the air at a given altitude (from 0 to 25,000 meters).
 - `temp_conversion.py` -  Function does temperature unit conversion to a variety of units for ambient conditions that describe the atmospheric model.
-- `mach_number.py` - Given an altitude, function calculates the speed of sound in the embient conditions and calculates the Mach number for the speed of an object moving in the same environment.
+- `mach_number.py` - Given an altitude, function calculates the speed of sound in the ambient conditions and calculates the Mach number for the speed of an object moving in the same environment.
 
 ## py_atmosphere in the Python Ecosystem
 
-There are multiple Python packages in the ecosystem that have the similar characteristics particularly when it comes to characterization of the standards atmopheres. Existing packages with similar functionalities, particularly for ICAO standard calculations:
+There are multiple Python packages in the ecosystem that have the similar characteristics particularly when it comes to characterization of the standards atmospheres. Existing packages with similar functionalities, particularly for ICAO standard calculations:
 
 - [atmos](https://pypi.org/project/atmos/) - programming utilities for atmospheric sciences.
 - [metpy](https://pypi.org/project/MetPy/) - reading, visualization and performing calculations with weather data.
@@ -41,6 +41,14 @@ Use of the standard model on practical aerospace applications is quite limited. 
 ```bash
 pip install py_atmosphere_mach
 ```
+## Dependencies
+
+  - python=3.11
+  - pandas=2.1.2
+  - pytest=7.4.3
+  - ipykernel=6.26.0
+  - poetry
+  - cookiecutter
 
 ## Usage
 
